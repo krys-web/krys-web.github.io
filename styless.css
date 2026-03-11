@@ -1,0 +1,817 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body{
+    overflow-x: hidden;
+    background-color: #F4F6F9;
+    padding-top: 80px;
+}
+
+
+/* === BOTON DE WHATSAPP=== */
+
+.whatsapp-float {
+  position: fixed;
+  width: 80px;          /* 👈 antes 60px */
+  height: 80px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover elegante */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 65px;
+    height: 65px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* === MENU PRINCIPAL === */
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    padding: 15px 40px;
+    background-color: rgba(174, 227, 230, 0.8);
+
+    z-index: 1000;
+}
+
+.section-navbar{
+    padding-top: 80px; /* debe ser similar a la altura del navbar */
+}
+
+/* -- LOGO -- */
+.logo {
+    height: 55px;   /* cambia aquí el tamaño */
+    width: auto;    /* mantiene proporción */
+}
+
+/* LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    text-decoration: none;
+    color: rgb(4, 3, 61);
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Logo arriba, links abajo */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+        flex-wrap: wrap; /* Permite que los links bajen si no caben */
+        justify-content: center;
+    }
+}
+
+/* ===== SECCIÓN MISION Y VISION ===== */
+
+/* ===================================== */
+/* SECCIÓN MISIÓN Y VISIÓN */
+/* ===================================== */
+
+.myv {
+  padding: 120px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #0B132B 0%, #111c3d 100%);;
+}
+
+/* SLOGAN */
+
+.slogan {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 70px;
+  color: #00C2CB;
+}
+
+/* ZONA CENTRAL */
+
+.zona-mv {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CONTENEDOR CARTAS */
+
+.contenedor1 {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* CARTAS */
+
+.mision,
+.vision {
+  width: 300px;
+  padding: 30px;
+  border-radius: 18px;
+  background: #1C2541;
+  color: whitesmoke;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  border: 8px solid #00C2CB;
+}
+
+.mision:hover,
+.vision:hover {
+  transform: translateY(-10px);
+}
+
+/* ===================================== */
+/* FRASES ALREDEDOR */
+/* ===================================== */
+
+/* Estado normal (opaco) */
+.frase{
+  position: absolute;
+  width: 260px;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(16, 160, 204, 0.08);
+  line-height: 1.4;
+  transition: all 0.8s ease;
+}
+
+/* Estado iluminado */
+.frase.activa{
+  color: #aee3e6;
+  transform: scale(1.05);
+  text-shadow: 0 0 12px rgba(174,227,230,0.8);
+}
+
+/* Hover individual */
+/*
+.frase:hover {
+  color: #aee3e6;
+  transform: scale(1.05);
+}*/
+
+/* POSICIONAMIENTO ESTRATÉGICO */
+
+/* Arriba izquierda */
+.f1 {
+  top: -40px;
+  left: -60px;
+}
+
+/* Arriba derecha */
+.f2 {
+  top: -40px;
+  right: -60px;
+}
+
+/* Centro izquierda */
+.f3 {
+  top: 50%;
+  left: -120px;
+  transform: translateY(-50%);
+}
+
+/* Centro derecha */
+.f4 {
+  top: 50%;
+  right: -120px;
+  transform: translateY(-50%);
+}
+
+/* Abajo izquierda */
+.f5 {
+  bottom: -40px;
+  left: -60px;
+}
+
+/* Abajo derecha */
+.f6 {
+  bottom: -40px;
+  right: -60px;
+}
+
+@media (max-width: 768px) {
+    .myv {
+        padding: 60px 10px;
+    }
+
+    .slogan {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    /* Ocultamos las frases flotantes en móvil para evitar desbordamiento */
+    .frase {
+        display: none; 
+    }
+
+    .contenedor1 {
+        flex-direction: column; /* Una carta sobre otra */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mision, .vision {
+        width: 100%; /* Que ocupen el ancho disponible */
+        max-width: 320px;
+    }
+}
+
+/* === SECCION SERVICIOS === */
+
+.servicios{
+    padding: 100px 20px;
+    background-color: #1C2541;
+    color: #00C2CB;
+}
+
+.contenedor2{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-servicios{
+    margin-bottom: 60px;
+    font-size: 32px;
+}
+
+/* ===== ALINEAR CUADROS ===== */
+.contenedor-cuadros{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* evita que se rompa en pantallas pequeñas */
+}
+
+/* ===== CARD FLIP ===== */
+.card{
+    width: 220px;
+    height: 220px;
+    perspective: 1000px;
+}
+
+.card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backface-visibility: hidden;
+    font-weight: bold;
+}
+
+/* Frente */
+.card-front{
+    background-color: #0B132B;
+    color: white;
+    border: 4px solid #00C2CB;
+
+    flex-direction: column;   /* 👈 esto es la clave */
+    gap: 12px;                /* espacio entre icono y texto */
+    text-align: center;
+}
+
+.card-front img{
+    width: 55px;        /* tamaño proporcional a tarjeta 220px */
+    height: 55px;
+    object-fit: contain;
+}
+
+/* Parte trasera */
+.card-back{
+    background-color: #00bcd4;
+    color: #0B132B;;
+    transform: rotateY(180deg);
+    text-align: justify;  /* Esto justifica el texto */
+    padding: 10px;        /* Opcional: para que no quede pegado al borde */
+    font-size: 12px;
+    border: 4px solid #aa7005;
+}
+
+/* === NOTA EXPLICATIVA === */
+.notas{
+    font-size: 12px;
+    color: white;
+    margin-top: 80px;
+}
+
+/* === SECCION VALORES === */
+
+.valores{
+    background: linear-gradient(180deg, #0B132B 0%, #111c3d 100%);
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.titulo-valores{
+    text-align: center;
+    color: #00C2CB;
+    margin-bottom: 70px;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+/* CONTENEDOR GENERAL */
+.valores-slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* DEGRADADOS LATERALES */
+.valores-slider::before,
+.valores-slider::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.valores-slider::before{
+    left: 0;
+    background: linear-gradient(to right, #0B132B, transparent);
+}
+
+.valores-slider::after{
+    right: 0;
+    background: linear-gradient(to left, #0B132B, transparent);
+}
+
+/* PISTA */
+.valores-track{
+    display: flex;
+    gap: 35px;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+/* PAUSA AL PASAR EL MOUSE */
+.valores-slider:hover .valores-track{
+    animation-play-state: paused;
+}
+
+/* CARTAS */
+.valor-card{
+    width: 180px;
+    height: 240px;
+    flex: 0 0 auto;
+
+    background: linear-gradient(145deg, #111827, #1f2937);
+    border-radius: 20px;
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+
+    transition: all 0.4s ease;
+}
+
+.valor-card:hover{
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+/* IMAGEN */
+.valor-card img{
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+
+/* TITULO */
+.valor-card h3{
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #00C2CB;
+}
+
+/* TEXTO */
+.valor-card p{
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* EFECTO LUZ SUPERIOR */
+.valor-card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    background: radial-gradient(circle at center, 
+        rgba(0,194,203,0.25), 
+        transparent 60%);
+
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* ACTIVAR LUZ AL HOVER */
+.valor-card:hover::before{
+    opacity: 1;
+}
+
+/* EFECTO ELEVACIÓN TESLA */
+.valor-card:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.6),
+        0 0 25px rgba(0,194,203,0.4);
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== RESPONSIVE PARA MÓVIL - SCROLL HORIZONTAL ===== */
+@media (max-width: 768px) {
+    .valores {
+        padding: 60px 0;
+    }
+    
+    .valores-slider {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+        scrollbar-width: thin; /* Firefox - barra más delgada */
+        scrollbar-color: #00C2CB #1C2541; /* Firefox - color del scroll */
+        padding: 20px 0 30px 0; /* Espacio para la barra */
+    }
+    
+    /* Estilizar la barra de scroll para Chrome/Safari/Edge */
+    .valores-slider::-webkit-scrollbar {
+        height: 8px; /* Altura de la barra horizontal */
+    }
+    
+    .valores-slider::-webkit-scrollbar-track {
+        background: #1C2541; /* Color del fondo de la barra */
+        border-radius: 10px;
+    }
+    
+    .valores-slider::-webkit-scrollbar-thumb {
+        background: #00C2CB; /* Color del "pulgón" de la barra */
+        border-radius: 10px;
+    }
+    
+    .valores-slider::-webkit-scrollbar-thumb:hover {
+        background: #00a0a8; /* Color al pasar el mouse */
+    }
+    
+    .valores-track {
+        animation: none; /* Quitamos la animación infinita */
+        gap: 20px; /* Reducimos el espacio entre cartas */
+        padding: 0 20px; /* Padding lateral para que no empiecen pegadas */
+    }
+    
+    /* Mantenemos las cartas con el mismo tamaño */
+    .valor-card {
+        min-width: 180px;
+        height: 240px;
+    }
+    
+    /* Ocultamos los degradados laterales en móvil */
+    .valores-slider::before,
+    .valores-slider::after {
+        display: none;
+    }
+}
+
+/* === CLIENTES === */
+
+.clientes {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+
+  background: radial-gradient(circle at top, #00c2cb 0%, #0398a0 40%, #0B132B 100%);
+  overflow: hidden;
+}
+
+/* efecto de luz */
+.clientes::before{
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+
+  background: radial-gradient(circle, rgba(0,194,203,0.35), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* contenido encima del efecto */
+.contenedor4,
+.titulo-clientes{
+  position: relative;
+  z-index: 2;
+}
+
+.contenedor4 {
+  display: flex;              /* Los pone en horizontal */
+  justify-content: center;    /* Centra los cuadros */
+  gap: 40px;                  /* Espacio entre ellos */
+  flex-wrap: wrap;            /* En móvil se bajan */
+}
+
+.carta {
+  width: 280px;
+  height: 300px;
+  background: rgba(11, 19, 43, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 8px solid rgba(9, 208, 235);
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carta:hover {
+  transform: translateY(-5px);
+}
+
+.carta img {
+  width: 250px;        /* MISMO ANCHO PARA TODAS */
+  height: 180px;       /* MISMA ALTURA PARA TODAS */
+  object-fit: contain; /* Evita que se deformen */
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.carta a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #fffb00;
+  color: rgb(8, 8, 8);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.carta a:hover {
+  background: #005fcc;
+}
+
+.titulo-clientes {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #0B132B;
+}
+
+/* === SECCION CONTACTO ===*/
+.contacto {
+    padding: 100px 20px;
+    background-color: #1C2541;
+    color: white;
+    position: relative; /* <--- IMPORTANTE: Esto ancla el cuadro aquí */
+    min-height: 500px;  /* Asegura espacio suficiente */
+}
+
+.contenedor-contacto{
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-contacto{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.subtitulo-contacto{
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.contacto-grid{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+/* === FORMULARIO === */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+}
+
+.formulario input,
+.formulario textarea{
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.formulario input:hover,
+.formulario textarea:hover{
+    background-color: #c7c6be;
+}
+
+.formulario button{
+    padding: 12px;
+    border: none;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario button:hover{
+    background-color: #0097a7;
+}
+
+#formMessage{
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        max-width: 350px;
+    }
+
+    .titulo-servicios, .titulo-valores, .titulo-clientes, .titulo-contacto {
+        font-size: 26px;
+    }
+
+    .contenedor-cuadros {
+        gap: 20px;
+    }
+}
+
+/* INFO */
+.info-contacto{
+    text-align: left;
+    max-width: 300px;
+}
+/* === RESPONSIVO SECCION CONTACTO === */
+@media (max-width: 768px){
+    .contacto-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* === BLOQUE DESARROLLADO POR === */
+
+.desarrollado {
+    position: absolute; /* Cambiado de fixed a absolute */
+    bottom: 20px;       /* Distancia desde el fondo de la sección contacto */
+    left: 20px;         /* Distancia desde la izquierda de la sección contacto */
+    background: rgb(67, 74, 109); /* Fondo sutil para que no tape */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #00C2CB;
+    font-size: 11px;
+}
+
+.contenedor-desarrollo {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos uno debajo del otro */
+    align-items: flex-start; /* Alinea texto e imagen a la izquierda */
+    gap: 15px; /* Espacio entre el texto y la imagen */
+}
+
+.contenedor-desarrollo p {
+    line-height: 1.5;
+    margin: 0;
+    color: #ccc;
+}
+
+.contenedor-desarrollo a {
+    color: #00C2CB;
+    text-decoration: none;
+}
+
+.imagen-logod {
+    height: 35px;
+    width: auto;
+    opacity: 0.8;
+}
+
+/* === AJUSTE RESPONSIVO PARA MÓVILES === */
+@media (max-width: 768px) {
+    .desarrollado {
+        position: relative; /* En móvil es mejor que fluya al final del formulario */
+        bottom: 0;
+        left: 0;
+        margin-top: 40px;
+        width: 100%;
+        text-align: center;
+        border-left: none;
+        border-top: 1px solid rgba(0, 194, 203, 0.3);
+    }
+    
+    .contenedor-desarrollo {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
