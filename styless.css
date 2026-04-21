@@ -815,3 +815,65 @@
         gap: 10px;
     }
 }
+
+/*** DISEÑO DE MENU HAMBURQUESA ***/
+
+/* Estilos generales del botón hamburguesa (oculto por defecto) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(4, 3, 61);
+    transition: all 0.3s ease;
+}
+
+/* Ajustes para Móvil */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Logo a un lado, hamburguesa al otro */
+        padding: 15px 25px;
+    }
+
+    .hamburger {
+        display: flex; /* Mostrar en móvil */
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Oculto fuera de pantalla */
+        top: 0;
+        background-color: rgba(174, 227, 230, 0.98);
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Clase que activaremos con JS */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Animación de la hamburguesa a "X" */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

@@ -59,3 +59,25 @@ function activarFraseAleatoria(){
 
 // ejecutar continuamente
 setInterval(activarFraseAleatoria, 900);
+
+
+// FUNCIONAMIENTO MENU TIPO HAMBURGUESA
+
+// === LÓGICA MENÚ HAMBURGUESA ===
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const links = document.querySelectorAll('.nav-links li a');
+
+// Abrir/Cerrar menú al dar clic en la hamburguesa
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+// Cerrar el menú automáticamente cuando se hace clic en un enlace (para navegar)
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
