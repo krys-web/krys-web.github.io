@@ -760,62 +760,6 @@
     }
 }
 
-/* === BLOQUE DESARROLLADO POR === */
-
-.desarrollado {
-    position: absolute; /* Cambiado de fixed a absolute */
-    bottom: 20px;       /* Distancia desde el fondo de la sección contacto */
-    left: 20px;         /* Distancia desde la izquierda de la sección contacto */
-    background: rgb(67, 74, 109); /* Fondo sutil para que no tape */
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 3px solid #00C2CB;
-    font-size: 11px;
-}
-
-.contenedor-desarrollo {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos uno debajo del otro */
-    align-items: flex-start; /* Alinea texto e imagen a la izquierda */
-    gap: 15px; /* Espacio entre el texto y la imagen */
-}
-
-.contenedor-desarrollo p {
-    line-height: 1.5;
-    margin: 0;
-    color: #ccc;
-}
-
-.contenedor-desarrollo a {
-    color: #00C2CB;
-    text-decoration: none;
-}
-
-.imagen-logod {
-    height: 35px;
-    width: auto;
-    opacity: 0.8;
-}
-
-/* === AJUSTE RESPONSIVO PARA MÓVILES === */
-@media (max-width: 768px) {
-    .desarrollado {
-        position: relative; /* En móvil es mejor que fluya al final del formulario */
-        bottom: 0;
-        left: 0;
-        margin-top: 40px;
-        width: 100%;
-        text-align: center;
-        border-left: none;
-        border-top: 1px solid rgba(0, 194, 203, 0.3);
-    }
-    
-    .contenedor-desarrollo {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
 /*** DISEÑO DE MENU HAMBURQUESA ***/
 
 /* Estilos generales del botón hamburguesa (oculto por defecto) */
